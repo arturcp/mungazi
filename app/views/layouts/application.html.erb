@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="site-content" role="main">
+      <%= yield %>
+    </main>
+
+    <%= yield :javascripts %>
   </body>
 </html>

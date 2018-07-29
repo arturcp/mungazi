@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mungazi</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'home', media: 'all' %>
+    <%= javascript_include_tag :modernizr %>
+    <%= yield :javascripts %>
+    <%= javascript_include_tag 'home' %>
+  </head>
+
+  <body>
+    <main class="site-content" role="main">
+      <%= yield %>
+    </main>
+  </body>
+</html>
