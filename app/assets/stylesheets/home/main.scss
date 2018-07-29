@@ -165,7 +165,7 @@ main > section {
 }
 
 .sec-title h2:after {
-    border-bottom: 1px solid #ccbd95;
+    border-bottom: 1px solid $main-color;
     content: "";
     display: block;
     left: 45%;
@@ -829,6 +829,7 @@ ul.external li a:hover {
 
 .price-table {
     border: 1px solid #e3e3e3;
+    min-height: 300px;
 }
 
 .price-table.featured {
@@ -867,8 +868,10 @@ ul.external li a:hover {
 }
 
 .price-table .value span:first-child {
-    font-size: 32px;
+    font-size: 15px;
     line-height: 32px;
+    color: #000;
+    text-align: left;
 }
 
 .price-table .value span:nth-child(2) {
