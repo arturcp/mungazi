@@ -1,0 +1,51 @@
+<section id="portfolio">
+  <div class="container">
+    <div class="row">
+
+      <div class="sec-title text-center wow animated fadeInDown">
+        <h2>Notícias</h2>
+      </div>
+
+      <%
+          articles = [
+            {
+              image_url: 'http://localhost:8000/doacao.jpg',
+              url: '',
+              title: 'Agradecimentos à Cassia'
+            },
+            {
+              image_url: 'http://localhost:8000/doacao2.jpg',
+              url: '',
+              title: 'Erick Guanho'
+            },
+          ]
+      %>
+
+      <ul class="project-wrapper wow animated fadeInUp">
+        <% articles.take(3).each do |article| %>
+            <li class="portfolio-item" data-alt="<%= article[:title] %>">
+              <%= link_to article[:url] do %>
+                <%= image_tag article[:image_url], class: 'img-responsive' %>
+              <% end %>
+              <figcaption class="mask">
+                <h3><%= article[:title] %></h3>
+              </figcaption>
+              <ul class="external">
+                <li>
+                  <%= link_to article[:image_url], class: 'fancybox', title: article[:title] do %>
+                    <i class="fa fa-search-plus"></i>
+                  <% end %>
+                </li>
+                <li>
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= article[:url] %>" target="_blank">
+                    <i class="fa fa-share"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</section>

@@ -1,14 +1,13 @@
-
-
 <%= render 'slider' %>
 <%= render 'about' %>
 <%= render 'service' %>
-<%= render 'portfolio' %>
+<%= render 'articles' %>
 <%= render 'testimonials' %>
 <%= render 'pricing' %>
 <%= render 'contact' %>
 
-
 <section id="google-map">
-  <div id="map-canvas" class="wow animated fadeInUp"></div>
+  <%= link_to 'https://www.google.com/maps/place/R.+Greg%C3%B3rio+de+Souza,+128+-+Vila+Nova+Savoia,+S%C3%A3o+Paulo+-+SP,+03531-020/@-23.5428675,-46.522557,17z/data=!3m1!4b1!4m5!3m4!1s0x94ce5e0145d87a99:0xa1c617c7cbaa7de!8m2!3d-23.5428724!4d-46.5203683', target: 'blank' do %>
+    <div class="map-image wow animated fadeInUp"></div>
+  <% end %>
 </section>
