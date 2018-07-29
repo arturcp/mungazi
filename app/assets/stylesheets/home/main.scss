@@ -600,9 +600,9 @@ main > section {
 }
 
 .service-item:hover .service-icon {
-    border: 3px solid #ccbd95;
+    border: 3px solid $main-color;
     margin-bottom: 20px;
-    color: #ccbd95;
+    color: $main-color;
 }
 
 .service-icon i {
