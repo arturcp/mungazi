@@ -1,24 +1,33 @@
-# README
+# Mungazi
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Mungazi is a non-profit organization created in 2015 with the objective of
+helping refugees to adapt to their new realities.
 
-Things you may want to cover:
 
-* Ruby version
+# Requirements
 
-* System dependencies
+* ruby 2.5.0
+* rails >= 5.2.0
 
-* Configuration
+## Installation
 
-* Database creation
+* Clone the repository
+* Set your environment by creating a .env file. You can use the .env.example as
+a template
+* Create the database by running `bin/rake db:create`
+* Update the schema by running `bin/rake db:migrate`
 
-* Database initialization
+Optionally, you can seed your database with initial data by running:
 
-* How to run the test suite
+```
+  bin/rake db:seed
+```
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## Tests
 
-* ...
+To execute the tests, run:
+
+```
+  bin/rspec
+```
