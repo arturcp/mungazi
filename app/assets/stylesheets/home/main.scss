@@ -1500,3 +1500,14 @@ textarea.form-control {
 .work-title {
   color: $main-color;
 }
+
+.video-container {
+  height: 311px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 479px) {
+  .video-container {
+    height: 200px;
+  }
+}

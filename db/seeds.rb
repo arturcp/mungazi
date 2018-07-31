@@ -37,3 +37,8 @@ Event.create!(
   date: DateTime.parse('2017-9-14 12:30')
 )
 puts 'done'
+
+puts 'creating videos...'
+Video.create!(url: 'https://www.facebook.com/ongmungazi/videos/972144796260505/')
+Video.create!(url: 'https://www.facebook.com/ongmungazi/videos/971313019677016/')
+puts 'done'

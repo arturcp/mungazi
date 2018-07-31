@@ -1,9 +1,9 @@
 <%= render 'slider' %>
-<%= render 'about' %>
+<%= render 'about', events: @events %>
 <%= render 'service' %>
 <%= render 'articles' %>
 <%= render 'testimonials' %>
-<%= render 'videos' %>
+<%= render 'videos', videos: @videos %>
 <%= render 'contact' %>
 
 <section id="google-map">
