@@ -33,8 +33,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'bootstrap-sass'
+gem 'devise'
 gem 'font-awesome-rails'
 gem 'modernizr-rails'
+gem 'rails_admin_rollincode', '~> 1.0'
+gem 'rails_admin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
