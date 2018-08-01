@@ -43,7 +43,9 @@ RailsAdmin.config do |config|
     edit do
       include_all_fields
       field :content, :ck_editor
-      field :image_url, :file_upload
     end
   end
+
+  config.excluded_models << Ckeditor::AttachmentFile
+  config.excluded_models << Ckeditor::Picture
 end

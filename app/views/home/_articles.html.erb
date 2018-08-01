@@ -5,43 +5,23 @@
         <h2>Notícias</h2>
       </div>
 
-      <%
-          articles = [
-            {
-              image_url: 'https://res.cloudinary.com/arsenal/image/upload/v1532900569/mungazi/doacao.jpg',
-              url: '',
-              title: 'Agradecimentos à Cassia'
-            },
-            {
-              image_url: 'https://res.cloudinary.com/arsenal/image/upload/v1532900571/mungazi/doacao2.jpg',
-              url: '',
-              title: 'Erick Guanho'
-            },
-            {
-              image_url: 'https://res.cloudinary.com/arsenal/image/upload/v1532900645/mungazi/doacao3.jpg',
-              url: '',
-              title: 'Luciana'
-            },
-          ]
-      %>
-
       <ul class="project-wrapper wow animated fadeInUp">
-        <% articles.take(3).each do |article| %>
-            <li class="portfolio-item" data-alt="<%= article[:title] %>">
-              <%= link_to article[:url] do %>
-                <%= image_tag article[:image_url], class: 'img-responsive' %>
+        <% articles.each do |article| %>
+            <li class="portfolio-item" data-alt="<%= article.title %>">
+              <%= link_to 'article.url' do %>
+                <%= image_tag article.image_url.url, class: 'img-responsive' %>
               <% end %>
               <figcaption class="mask">
-                <h3><%= article[:title] %></h3>
+                <h3><%= article.title %></h3>
               </figcaption>
               <ul class="external">
                 <li>
-                  <%= link_to article[:image_url], class: 'fancybox', title: article[:title] do %>
+                  <%= link_to article.image_url.url, class: 'fancybox', title: article.title do %>
                     <i class="fa fa-search-plus"></i>
                   <% end %>
                 </li>
                 <li>
-                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= article[:url] %>" target="_blank">
+                  <a href="https://www.facebook.com/sharer/sharer.php?u=<%= 'article.url' %>" target="_blank">
                     <i class="fa fa-share"></i>
                   </a>
                 </li>

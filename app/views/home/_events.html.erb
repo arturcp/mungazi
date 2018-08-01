@@ -4,15 +4,15 @@
   <div id="works">
     <% events.each do |event| %>
       <div class="work-item">
-        <p class="work-title"><%= event[:title] %></p>
-        <p><%= event[:subtitle] %></p>
+        <p class="work-title"><%= event.title %></p>
+        <p><%= event.subtitle %></p>
         <p>&nbsp;</p>
         <p>
-          <%= raw event[:description].to_s.gsub("\n", "<br /><br />") %>
+          <%= raw event.description.to_s.gsub("\n", "<br /><br />") %>
         </p>
         <p>&nbsp;</p>
         <p>
-          <span><%= event[:date].strftime('%d/%m/%Y %H:%M') %></span>
+          <span><%= event.date.strftime('%d/%m/%Y %H:%M') %></span>
         </p>
       </div>
     <% end %>
