@@ -5,4 +5,7 @@ class Article < ApplicationRecord
   validates :short_title, presence: true
 
   mount_uploader :image_url, ImageUploader
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 end
