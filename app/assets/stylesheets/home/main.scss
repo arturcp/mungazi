@@ -784,27 +784,6 @@ ul.external li a:hover {
     position: relative;
 }
 
-.testimonial-item > div:before {
-    background-image: image-url('icons/quotes.png');
-    background-repeat: no-repeat;
-    bottom: 127px;
-    height: 33px;
-    left: -35px;
-    position: absolute;
-    width: 45px;
-}
-
-.testimonial-item > div:after {
-    background-image: image-url('icons/quotes.png');
-    background-position: -58px 0;
-    background-repeat: no-repeat;
-    bottom: -50px;
-    height: 33px;
-    position: absolute;
-    right: 0;
-    width: 45px;
-}
-
 .testimonial-item > div > span {
     display: inline-block;
     font-weight: 700;
