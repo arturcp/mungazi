@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <%= csrf_meta_tags %>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <%= stylesheet_link_tag    'devise', media: 'all' %>
+    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  </head>
+
+  <body>
+
+    <div class="row">
+      <div class="col s4 offset-s4">
+        <div class="wrapper">
+          <section id="login-content">
+            <div class="container devise-container">
+              <%= yield %>
+            </div>
+
+            <% if notice || alert %>
+              <ul class="devise-collection collection">
+                <% if notice %>
+                  <li class="collection-item"><%= notice %></li>
+                <% end %>
+                <% if alert %>
+                  <li class="collection-item"><%= alert %></li>
+                <% end %>
+              </ul>
+            <% else %>
+              <p>&nbsp;</p>
+            <% end %>
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

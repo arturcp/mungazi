@@ -49,3 +49,7 @@ Article.create!(title: 'Agradecimentos à Cassia', short_title: 'Agradecimentos 
 Article.create!(title: 'Erick Guanho', short_title: 'Erick Guanho', image_url: File.open(File.join(Rails.root, 'db', 'seed_images', 'item2.jpg')), content: 'lorem ipsum')
 Article.create!(title: 'Luciana', short_title: 'Luciana', image_url: File.open(File.join(Rails.root, 'db', 'seed_images', 'item3.jpg')), content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.')
 puts 'done'
+
+puts 'creating admin...'
+User.create!(email: ENV['ADMIN_EMAIL'], password: ENV.fetch('ADMIN_PASSWORD'))
+puts 'done'

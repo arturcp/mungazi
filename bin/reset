@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+system('bin/rake db:drop db:create db:migrate bin/rake db:seed')
