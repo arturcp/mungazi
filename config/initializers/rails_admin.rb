@@ -48,6 +48,7 @@ RailsAdmin.config do |config|
 
   config.excluded_models << Ckeditor::AttachmentFile
   config.excluded_models << Ckeditor::Picture
+  config.excluded_models << Ckeditor::Asset
 
   config.authenticate_with do
     warden.authenticate! scope: :user
