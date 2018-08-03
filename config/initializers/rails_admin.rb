@@ -44,6 +44,54 @@ RailsAdmin.config do |config|
       include_all_fields
       field :content, :ck_editor
     end
+
+    show do
+      include_all_fields
+      field :content do
+        pretty_value do
+          value.html_safe
+        end
+      end
+      configure :slug do
+        hide
+      end
+    end
+
+    list do
+      configure :content do
+        hide
+      end
+    end
+  end
+
+  config.model User do
+    list do
+      configure :reset_password_sent_at do
+        hide
+      end
+      exclude_fields :remember_created_at, :current_sign_in_at, :current_sign_in_ip,
+        :last_sign_in_ip, :last_sign_in_at
+    end
+  end
+
+  config.model Video do
+    list do
+      include_all_fields
+      fields :url do
+        formatted_value do
+          "<iframe src=\"https://www.facebook.com/plugins/video.php?href=#{CGI.escape(value)}&show_text=0&width=560\" width=\"100%\" height=\"100%\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\"></iframe>".html_safe
+        end
+      end
+    end
+
+    show do
+      include_all_fields
+      fields :url do
+        formatted_value do
+          "<iframe src=\"https://www.facebook.com/plugins/video.php?href=#{CGI.escape(value)}&show_text=0&width=560\" width=\"100%\" height=\"500px\" style=\"border:none;overflow:hidden\" scrolling=\"no\" frameborder=\"0\" allowTransparency=\"true\" allowFullScreen=\"true\"></iframe>".html_safe
+        end
+      end
+    end
   end
 
   config.excluded_models << Ckeditor::AttachmentFile

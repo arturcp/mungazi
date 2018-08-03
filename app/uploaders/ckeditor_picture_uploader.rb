@@ -1,6 +1,7 @@
 # encoding: utf-8
 class CkeditorPictureUploader < CarrierWave::Uploader::Base
   include Ckeditor::Backend::CarrierWave
+  include Cloudinary::CarrierWave
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
@@ -8,7 +9,7 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::ImageScience
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -17,9 +18,13 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
-  # def default_url
-  #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
-  # end
+  def default_url
+    if ENV['CLOUDINARY_NAME']
+      'http://res.cloudinary.com/ongmungazi/image/upload' + [version_name, "default.png"].compact.join('_')
+    else
+      "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+    end
+  end
 
   # Process files as they are uploaded:
   # process scale: [200, 300]
@@ -43,5 +48,14 @@ class CkeditorPictureUploader < CarrierWave::Uploader::Base
   # For images you might use something like this:
   def extension_white_list
     Ckeditor.image_file_types
+  end
+
+  [:extract_content_type, :extract_size, :extract_dimensions].each do |method|
+    define_method :"#{method}_with_cloudinary" do
+      send(:"#{method}_without_cloudinary") if self.file.is_a?(CarrierWave::SanitizedFile)
+      {}
+    end
+    alias_method :"#{method}_without_cloudinary", method
+    alias_method method, :"#{method}_with_cloudinary"
   end
 end
