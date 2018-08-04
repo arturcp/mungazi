@@ -9,14 +9,14 @@
         <% articles.each do |article| %>
             <li class="portfolio-item" data-alt="<%= article.title %>">
               <%= link_to article_path(article) do %>
-                <%= image_tag article.image_url.url, class: 'img-responsive' %>
+                <%= image_tag article.image.url, class: 'img-responsive' %>
               <% end %>
               <figcaption class="mask">
                 <h3><%= article.title %></h3>
               </figcaption>
               <ul class="external">
                 <li>
-                  <%= link_to article.image_url.url, class: 'fancybox', title: article.title do %>
+                  <%= link_to article.image.url, class: 'fancybox', title: article.title do %>
                     <i class="fa fa-search-plus"></i>
                   <% end %>
                 </li>
