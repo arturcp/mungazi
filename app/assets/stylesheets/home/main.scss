@@ -1490,3 +1490,24 @@ textarea.form-control {
     height: 200px;
   }
 }
+
+#message-created {
+  display: none;
+  background-color: #e2ffe2;
+  text-align: center;
+  color: #40a040;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+
+.required {
+  border-color: #f00;
+  background-color: #f1e7e7;
+}
+
+#message-required-fields {
+  display: none;
+  color: #f00;
+  padding: 10px;
+}

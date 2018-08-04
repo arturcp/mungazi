@@ -94,6 +94,22 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Message do
+    list do
+      include_all_fields
+      fields :content do
+        formatted_value do
+          limit = 30
+          if value.length <= limit
+            value
+          else
+            value[0..limit - 1] + '...'
+          end
+        end
+      end
+    end
+  end
+
   config.excluded_models << Ckeditor::AttachmentFile
   config.excluded_models << Ckeditor::Picture
   config.excluded_models << Ckeditor::Asset

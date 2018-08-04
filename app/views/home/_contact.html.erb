@@ -6,22 +6,23 @@
         <p>Se tiver dúvidas ou sugestões, entre em contato conosco</p>
       </div>
 
-      <div class="col-md-7 contact-form wow animated fadeInLeft">
-        <form action="#" method="post">
-          <div class="input-field">
-            <input type="text" name="name" class="form-control" placeholder="Nome completo">
-          </div>
-          <div class="input-field">
-            <input type="email" name="email" class="form-control" placeholder="Email">
-          </div>
-          <div class="input-field">
-            <input type="text" name="subject" class="form-control" placeholder="Assunto">
-          </div>
-          <div class="input-field">
-            <textarea name="message" class="form-control" placeholder="Sua mensagem"></textarea>
-          </div>
-          <button type="submit" id="submit" class="btn btn-blue btn-effect">Enviar</button>
-        </form>
+      <div class="col-md-7 contact-form wow animated fadeInLeft" data-url="<%= message_path %>">
+        <div id="message-created">Mensagem enviada com sucesso</div>
+        <div class="input-field">
+          <input type="text" name="name" id="message-name" class="form-control" placeholder="Nome completo">
+        </div>
+        <div class="input-field">
+          <input type="email" name="email" id="message-email" class="form-control" placeholder="Email">
+        </div>
+        <div class="input-field">
+          <input type="text" name="subject" id="message-subject" class="form-control" placeholder="Assunto">
+        </div>
+        <div class="input-field">
+          <textarea name="content" id="message-content" class="form-control" placeholder="Sua mensagem"></textarea>
+        </div>
+        <div id="message-required-fields">* Campos obrigatórios</div>
+
+        <button type="submit" id="send-message" class="btn btn-blue btn-effect">Enviar</button>
       </div>
 
       <div class="col-md-5 wow animated fadeInRight">
