@@ -31,3 +31,7 @@ To execute the tests, run:
 ```
   bin/rspec
 ```
+
+## Templates
+
+* https://www.wowthemes.net/mediumish-free-bootstrap-4-0-html-template-medium-styled/
