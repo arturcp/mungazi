@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= render 'shared/google_analytics_header' %>
     <title>Mungazi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +13,7 @@
   </head>
 
   <body>
+    <%= render 'shared/google_analytics' %>
     <main class="site-content" role="main">
       <%= yield %>
     </main>
