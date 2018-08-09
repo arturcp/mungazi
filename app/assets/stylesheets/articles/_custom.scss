@@ -1,0 +1,50 @@
+#article-header {
+	.nav-link {
+		font-size: 17px;
+		margin-right: 20px;
+	}
+}
+
+.bordered-image {
+	border-radius: 10px;
+}
+
+#articles-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    padding: 10px 0;
+
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.article-link {
+  color: #000 !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.articles-container {
+  .page-item.active .page-link {
+    z-index: 2;
+    color: #fff;
+    background-color: #4fbaac;
+    border-color: #4fbaac;
+  }
+
+  .published-in {
+    color: #ccc;
+    font-size: 12px;
+  }
+
+  .centralized {
+    margin: 0 auto;
+  }
+}

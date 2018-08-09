@@ -45,12 +45,23 @@ puts 'done'
 
 
 puts 'creating articles...'
-article = Article.new(title: 'Agradecimentos à Cassia', short_title: 'Agradecimentos à Cassia', content: 'Hello World')
+content = <<EOF
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis dignissim mauris. Nullam sit amet lacinia lectus. Ut vitae tellus nec risus aliquet ultrices nec tempor diam. Donec est urna, vestibulum id dictum non, tristique quis ligula. Phasellus vestibulum eros ultrices mauris vehicula vehicula. Nunc ac ultricies lectus. Aenean risus ipsum, maximus a nibh tincidunt, lobortis volutpat lorem. Donec condimentum quam sit amet convallis auctor. Donec viverra dolor sed elit accumsan, vitae dictum eros ultrices. Maecenas ex arcu, bibendum nec laoreet id, aliquet ut nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Nunc accumsan orci pretium dolor pretium, sit amet malesuada ex scelerisque. Aenean rutrum, sem ac efficitur eleifend, odio erat luctus urna, sed euismod ligula est in mi. Donec aliquet nec turpis in interdum. Proin ac aliquet arcu. Sed purus lacus, elementum eu tortor vel, aliquam rhoncus magna. Suspendisse nisi risus, laoreet a est quis, varius varius arcu. Vivamus molestie nisi eu euismod posuere. Fusce a euismod nulla. Suspendisse ornare laoreet nisi nec tristique. Sed dapibus nisl vel blandit scelerisque. Donec sodales maximus euismod.
+
+Nunc tempus imperdiet lectus, consectetur scelerisque ligula dapibus quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In fermentum egestas dictum. Ut vel odio ac ante sollicitudin fermentum eu et tortor. Integer sit amet turpis varius, condimentum lorem vel, facilisis nulla. Sed et urna lorem. Nunc sed hendrerit libero. Quisque mollis sem vitae metus dignissim rhoncus. Nunc vestibulum arcu quis porta consectetur. Mauris mauris nibh, sollicitudin quis massa in, porta ultricies lorem. Maecenas suscipit leo quis nulla laoreet, id finibus ex iaculis. Vestibulum egestas nisi dapibus sapien imperdiet pharetra. Donec vitae ornare odio. Aliquam vel metus nec magna bibendum tincidunt ultricies ut tellus.
+
+Integer quis auctor sapien. Phasellus maximus, urna at sodales euismod, dolor erat suscipit purus, ut egestas mi felis ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet sollicitudin ipsum, at dignissim nisi iaculis et. Etiam fermentum mauris semper maximus ultricies. Ut dictum euismod elit vel efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In eget urna condimentum, maximus odio at, finibus erat. Nulla id bibendum odio, quis sagittis velit.
+
+Vestibulum egestas dictum ullamcorper. Integer mollis, odio et laoreet sagittis, magna libero tempus tellus, eget dignissim risus elit auctor diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin porttitor elit ut tellus tempus volutpat. Proin faucibus venenatis rutrum. Pellentesque quis diam varius, lacinia orci ut, tempor metus. Quisque vulputate erat elit, vitae malesuada metus cursus eu.
+EOF
+article = Article.new(title: 'Agradecimentos à Cassia', short_title: 'Agradecimentos à Cassia', content: content)
 File.open(File.join(Rails.root, 'db', 'seed_images', 'item1.jpg')) do |f|
   article.image = f
 end
 article.save!
-Article.create!(title: 'Erick Guanho', short_title: 'Erick Guanho', image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item2.jpg')), content: 'lorem ipsum')
+Article.create!(title: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.', short_title: 'Erick Guanho', image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item2.jpg')), content: 'Integer quis auctor sapien. Phasellus maximus, urna at sodales euismod, dolor erat suscipit purus, ut egestas mi felis ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet sollicitudin ipsum, at dignissim nisi iaculis et. Etiam fermentum mauris semper maximus ultricies. Ut dictum euismod elit vel efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In eget urna condimentum, maximus odio at, finibus erat. Nulla id bibendum odio, quis sagittis velit.')
 Article.create!(title: 'Luciana', short_title: 'Luciana', image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item3.jpg')), content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.')
 puts 'done'
 

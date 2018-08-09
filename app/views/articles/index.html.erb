@@ -1,0 +1,27 @@
+<%= render 'navbar', show_links: false %>
+<div class="container articles-container">
+	<div class="row">
+    <div class="col-md-8 col-md-offset-2 col-xs-12 centralized">
+      <div class="mainheading">
+        <h1 class="posttitle">Todas as notícias</h1>
+      </div>
+
+      <ul id="articles-list">
+        <% @articles.each do |article| %>
+          <%= link_to article_path(article), class: 'article-link' do %>
+            <li>
+              <i class="fa fa-newspaper-o"></i> <%= article.title %>
+              <br />
+              <span class="published-in">Publicado em <%= article.created_at.strftime('%d/%m/%Y') %></span>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+
+      <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+  </div>
+</div>
+
+<div class="hideshare"></div>
+<%= render 'footer' %>

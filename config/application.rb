@@ -29,5 +29,6 @@ module Mungazi
     # the framework and any gems in your application.
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
+    config.i18n.default_locale = 'pt-BR'
   end
 end
