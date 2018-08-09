@@ -12,7 +12,7 @@
                 <%= image_tag article.image.url, class: 'img-responsive' %>
               <% end %>
               <figcaption class="mask">
-                <h3><%= article.title %></h3>
+                <h4><%= article.title %></h4>
               </figcaption>
               <ul class="external">
                 <li>
@@ -29,6 +29,10 @@
             </li>
         <% end %>
       </ul>
+
+      <div id="all-articles-button">
+        <%= link_to 'Todas as notícias', article_list_index_path, class: 'btn btn-blue btn-effect' %>
+      </div>
     </div>
   </div>
 </section>

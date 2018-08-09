@@ -668,7 +668,7 @@ figcaption.mask {
     bottom: 0;
 }
 
-figcaption.mask h3 {
+figcaption.mask h3, figcaption.mask h4 {
     margin: 0;
     color: #fff;
 }
@@ -1510,4 +1510,8 @@ textarea.form-control {
   display: none;
   color: #f00;
   padding: 10px;
+}
+
+#all-articles-button {
+  text-align: center;
 }
