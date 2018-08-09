@@ -3,6 +3,10 @@
 		font-size: 17px;
 		margin-right: 20px;
 	}
+
+  .fa {
+    color: $main-color;
+  }
 }
 
 .bordered-image {
@@ -13,6 +17,7 @@
   list-style: none;
   margin-left: 0;
   padding-left: 0;
+  margin-bottom: 50px;
 
   li {
     padding: 10px 0;
@@ -20,6 +25,10 @@
     border: 1px solid #eee;
     padding: 10px;
     margin-bottom: 5px;
+  }
+
+  .fa {
+    color: $main-color;
   }
 }
 
@@ -35,8 +44,8 @@
   .page-item.active .page-link {
     z-index: 2;
     color: #fff;
-    background-color: #4fbaac;
-    border-color: #4fbaac;
+    background-color: $main-color;
+    border-color: $main-color;
   }
 
   .published-in {
@@ -47,4 +56,12 @@
   .centralized {
     margin: 0 auto;
   }
+
+  .page-link {
+    color: $main-color
+  }
+}
+
+.copyright-reference {
+  color: $main-color;
 }
