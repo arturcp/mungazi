@@ -8,6 +8,4 @@ class Article < ApplicationRecord
 
   extend FriendlyId
   friendly_id :title, use: :slugged
-
-  self.per_page = 2
 end
