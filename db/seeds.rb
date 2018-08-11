@@ -46,23 +46,33 @@ puts 'done'
 
 puts 'creating articles...'
 content = <<EOF
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec mollis dignissim mauris. Nullam sit amet lacinia lectus. Ut vitae tellus nec risus aliquet ultrices nec tempor diam. Donec est urna, vestibulum id dictum non, tristique quis ligula. Phasellus vestibulum eros ultrices mauris vehicula vehicula. Nunc ac ultricies lectus. Aenean risus ipsum, maximus a nibh tincidunt, lobortis volutpat lorem. Donec condimentum quam sit amet convallis auctor. Donec viverra dolor sed elit accumsan, vitae dictum eros ultrices. Maecenas ex arcu, bibendum nec laoreet id, aliquet ut nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-Nunc accumsan orci pretium dolor pretium, sit amet malesuada ex scelerisque. Aenean rutrum, sem ac efficitur eleifend, odio erat luctus urna, sed euismod ligula est in mi. Donec aliquet nec turpis in interdum. Proin ac aliquet arcu. Sed purus lacus, elementum eu tortor vel, aliquam rhoncus magna. Suspendisse nisi risus, laoreet a est quis, varius varius arcu. Vivamus molestie nisi eu euismod posuere. Fusce a euismod nulla. Suspendisse ornare laoreet nisi nec tristique. Sed dapibus nisl vel blandit scelerisque. Donec sodales maximus euismod.
-
-Nunc tempus imperdiet lectus, consectetur scelerisque ligula dapibus quis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In fermentum egestas dictum. Ut vel odio ac ante sollicitudin fermentum eu et tortor. Integer sit amet turpis varius, condimentum lorem vel, facilisis nulla. Sed et urna lorem. Nunc sed hendrerit libero. Quisque mollis sem vitae metus dignissim rhoncus. Nunc vestibulum arcu quis porta consectetur. Mauris mauris nibh, sollicitudin quis massa in, porta ultricies lorem. Maecenas suscipit leo quis nulla laoreet, id finibus ex iaculis. Vestibulum egestas nisi dapibus sapien imperdiet pharetra. Donec vitae ornare odio. Aliquam vel metus nec magna bibendum tincidunt ultricies ut tellus.
-
-Integer quis auctor sapien. Phasellus maximus, urna at sodales euismod, dolor erat suscipit purus, ut egestas mi felis ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet sollicitudin ipsum, at dignissim nisi iaculis et. Etiam fermentum mauris semper maximus ultricies. Ut dictum euismod elit vel efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In eget urna condimentum, maximus odio at, finibus erat. Nulla id bibendum odio, quis sagittis velit.
-
-Vestibulum egestas dictum ullamcorper. Integer mollis, odio et laoreet sagittis, magna libero tempus tellus, eget dignissim risus elit auctor diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin porttitor elit ut tellus tempus volutpat. Proin faucibus venenatis rutrum. Pellentesque quis diam varius, lacinia orci ut, tempor metus. Quisque vulputate erat elit, vitae malesuada metus cursus eu.
+<p><b><i>&quot;Quando me pediram para escolher um lugar para fugir escolhi o Brasil&quot;</i></b></p>\r\n\r\n<p>Nascido na Rep&uacute;blica Democr&aacute;tica do Congo, o professor Omana Petench criou uma organiza&ccedil;&atilde;o para ajudar a denunciar viola&ccedil;&otilde;es contra mulheres e crian&ccedil;as em seu pa&iacute;s. Com isso, virou advers&aacute;rio do governo e participou de uma revolta contra o Estado.</p>\r\n\r\n<p>Sofreu persegui&ccedil;&otilde;es, tortura, pris&otilde;es e sequestro, at&eacute; cruzar a fronteira em busca de prote&ccedil;&atilde;o. Sua casa no Congo foi invadida e sua filha mais velha, morta. Refugiado no Brasil desde 2013, deixou mulher e cinco filhos em Uganda. Conseguiu se reencontrar com a fam&iacute;lia em S&atilde;o Paulo em 2016 ap&oacute;s tr&ecirc;s anos e meio de separa&ccedil;&atilde;o.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p style=\"text-align: center;\"><iframe allow=\"autoplay; encrypted-media\" allowfullscreen=\"\" frameborder=\"0\" height=\"281\" src=\"https://www.youtube.com/embed/8paKulG1C_M\" width=\"480\"></iframe></p>\r\n
 EOF
-article = Article.new(title: 'Agradecimentos à Cassia', short_title: 'Agradecimentos à Cassia', content: content)
-File.open(File.join(Rails.root, 'db', 'seed_images', 'item1.jpg')) do |f|
-  article.image = f
-end
-article.save!
-Article.create!(title: 'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.', short_title: 'Erick Guanho', image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item2.jpg')), content: 'Integer quis auctor sapien. Phasellus maximus, urna at sodales euismod, dolor erat suscipit purus, ut egestas mi felis ac ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin laoreet sollicitudin ipsum, at dignissim nisi iaculis et. Etiam fermentum mauris semper maximus ultricies. Ut dictum euismod elit vel efficitur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In eget urna condimentum, maximus odio at, finibus erat. Nulla id bibendum odio, quis sagittis velit.')
-Article.create!(title: 'Luciana', short_title: 'Luciana', image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item3.jpg')), content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.')
+
+article = Article.create!(
+  title: 'Omana Petench',
+  short_title: 'Omana Petench',
+  image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item1.jpg')),
+  content: content
+)
+
+Article.create!(
+  title: 'A importância da palmeira',
+  short_title: 'A importância da palmeira',
+  image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item2.jpg')),
+  content: 'A palmeira é vital para os moradores da zona rural na África, cuja subsistência diária depende fortemente dos recursos naturais. Eles as usam para construir sua habitação, para fazer ferramentas – vassouras, cordas ou capas de faca – e comem o coração das plantas. A palmeira também é valorizada por suas propriedades medicinais, para tratar da tosse ou problemas de digestão. Infelizmente, muitos desses usos são letais para elas. Extrair o palmito, por exemplo, mata a árvore.'
+)
+
+content = <<EOF
+<p>Criado em 2015, a <strong>Mungazi</strong>, &eacute; uma organiza&ccedil;&atilde;o apartid&aacute;ria e laica, que visa prestar apoio aos refugiados na sua adapta&ccedil;&atilde;o a uma nova realidade, sem distin&ccedil;&atilde;o &eacute;tnica, pol&iacute;tica, ideol&oacute;gica ou religiosa.</p>\r\n\r\n<p>Al&eacute;m do apoio &agrave; integra&ccedil;&atilde;o, oferecemos a oportunidade da aprendizagem da cultura africana e gastronomia africana. Estes cursos, ministrados por refugiados, funcionam como pontes, por meio das quais os alunos tenham a possibilidade de acessar novas culturas, e suas riquezas, favorecendo os la&ccedil;os e as trocas intercomunit&aacute;rias, promovendo, assim, o resgate e a preserva&ccedil;&atilde;o da hist&oacute;ria africana no Brasil.</p>\r\n
+EOF
+Article.create!(
+  title: 'História da ONG',
+  short_title: 'História da ONG',
+  image: File.open(File.join(Rails.root, 'db', 'seed_images', 'item3.jpg')),
+  content: content
+)
+
 puts 'done'
 
 puts 'creating admin...'

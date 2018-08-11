@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :artigo, only: :show, param: :slug, controller: :articles, as: :articles
   resources :artigos, only: :index, controller: :articles, as: :article_list
   resource :message, only: :create
+  resources :eventos, only: :index, as: :events, controller: :events
 
   root 'home#index'
 end

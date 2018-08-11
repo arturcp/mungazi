@@ -1,0 +1,51 @@
+.event-link {
+  color: #000 !important;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.event-subtitle {
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: $main-color;
+}
+
+.event-title {
+  font-weight: bold;
+  padding-left: 5px;
+}
+
+.event-description {
+  margin-bottom: 10px;
+}
+
+.event-url {
+  background: image-url('url.png');
+  background-size: 50px;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+#events-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 50px;
+
+  li {
+    padding: 10px 0;
+    box-shadow: 5px 5px 5px #eee;
+
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .fa {
+    color: $main-color;
+  }
+}

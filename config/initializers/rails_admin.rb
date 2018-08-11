@@ -45,6 +45,9 @@ RailsAdmin.config do |config|
     edit do
       include_all_fields
       field :content, :ck_editor
+      configure :slug do
+        hide
+      end
     end
 
     show do

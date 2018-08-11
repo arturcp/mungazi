@@ -640,7 +640,12 @@ main > section {
     position: relative;
     width: 32%;
 
-    background-color: #ccc;
+    background-color: #f5f3f3;
+    min-height: 250px;
+
+    @media only screen and (max-width: 480px) {
+      min-height: auto;
+    }
 }
 
 .portfolio-item img.img-responsive {
