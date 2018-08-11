@@ -18,5 +18,6 @@
 //= require jquery.easing
 //= require SlitSlider
 //= require wow
+//= require bootstrap/modal
 
 //= require_tree ./home

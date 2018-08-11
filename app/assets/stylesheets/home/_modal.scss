@@ -1,0 +1,39 @@
+#sliderModal {
+  color: #e4e3d4;
+
+  .modal-dialog {
+    height: 100%;
+    width: 80%;
+  }
+
+  .modal-content {
+    background-color: #1d2129;
+    height: 90%;
+  }
+
+  .modal-body p {
+    line-height: 26px;
+    margin: 25px;
+  }
+
+  .modal-title {
+    color: #e4e3d4;
+  }
+
+  .close {
+    color: #fff;
+    opacity: 0.5;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .modal-dialog {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    .modal-content {
+      height: auto;
+    }
+  }
+}
